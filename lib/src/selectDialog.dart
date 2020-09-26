@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-
+import 'package:flutter/cupertino.dart';
 import '../dropdown_search.dart';
 
 class SelectDialog<T> extends StatefulWidget {
@@ -127,13 +127,15 @@ class _SelectDialogState<T> extends State<SelectDialog<T>> {
                           child: const Text("No data found"),
                         );
                     }
-                    return ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: snapshot.data.length,
-                      itemBuilder: (context, index) {
-                        var item = snapshot.data[index];
-                        return _itemWidget(item);
-                      },
+                    return CupertinoScrollbar(
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: snapshot.data.length,
+                        itemBuilder: (context, index) {
+                          var item = snapshot.data[index];
+                          return _itemWidget(item);
+                        },
+                      ),
                     );
                   },
                 ),

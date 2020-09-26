@@ -365,10 +365,10 @@ class _DropdownSearchState<T> extends State<DropdownSearch<T>> {
     final RelativeRect position = RelativeRect.fromSize(
       Rect.fromPoints(
         popupButtonObject.localToGlobal(
-            popupButtonObject.size.bottomLeft(Offset.zero),
+            popupButtonObject.size.bottomLeft(Offset(0, -8)),
             ancestor: overlay),
         popupButtonObject.localToGlobal(
-            popupButtonObject.size.bottomRight(Offset.zero),
+            popupButtonObject.size.bottomRight(Offset(0, -8)),
             ancestor: overlay),
       ),
       Size(overlay.size.width, overlay.size.height),
@@ -379,7 +379,7 @@ class _DropdownSearchState<T> extends State<DropdownSearch<T>> {
         color: widget.popupBackgroundColor,
         context: context,
         position: position,
-        elevation: 8,
+        elevation: 0,
         items: [
           CustomPopupMenuItem(
             enabled: false,
