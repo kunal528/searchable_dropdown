@@ -365,10 +365,10 @@ class _DropdownSearchState<T> extends State<DropdownSearch<T>> {
     final RelativeRect position = RelativeRect.fromSize(
       Rect.fromPoints(
         popupButtonObject.localToGlobal(
-            popupButtonObject.size.bottomLeft(Offset(0, -8)),
+            popupButtonObject.size.bottomLeft(Offset(0, -10)),
             ancestor: overlay),
         popupButtonObject.localToGlobal(
-            popupButtonObject.size.bottomRight(Offset(0, -8)),
+            popupButtonObject.size.bottomRight(Offset(0, -10)),
             ancestor: overlay),
       ),
       Size(overlay.size.width, overlay.size.height),
