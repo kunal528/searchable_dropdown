@@ -103,7 +103,7 @@ class DropdownSearch<T> extends StatefulWidget {
 
   ///custom layout for error
   final ErrorBuilder errorBuilder;
-  final int offset;
+  final double offset;
 
   ///the search box will be focused if true
   final bool autoFocusSearchBox;
