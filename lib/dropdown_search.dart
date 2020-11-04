@@ -368,11 +368,11 @@ class _DropdownSearchState<T> extends State<DropdownSearch<T>> {
       Rect.fromPoints(
         popupButtonObject.localToGlobal(
             popupButtonObject.size
-                .bottomLeft(Offset(0, widget.customDropDown)),
+                .bottomLeft(Offset(0, widget.offset)),
             ancestor: overlay),
         popupButtonObject.localToGlobal(
             popupButtonObject.size
-                .bottomRight(Offset(0, widget.customDropDown )),
+                .bottomRight(Offset(0, widget.offset )),
             ancestor: overlay),
       ),
       Size(overlay.size.width, overlay.size.height),
