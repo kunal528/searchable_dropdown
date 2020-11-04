@@ -103,6 +103,7 @@ class DropdownSearch<T> extends StatefulWidget {
 
   ///custom layout for error
   final ErrorBuilder errorBuilder;
+  final int offset;
 
   ///the search box will be focused if true
   final bool autoFocusSearchBox;
@@ -138,6 +139,7 @@ class DropdownSearch<T> extends StatefulWidget {
   final Color popupBarrierColor;
 
   DropdownSearch({
+    this.offset = -10,
     Key key,
     this.onSaved,
     this.validator,
@@ -365,10 +367,12 @@ class _DropdownSearchState<T> extends State<DropdownSearch<T>> {
     final RelativeRect position = RelativeRect.fromSize(
       Rect.fromPoints(
         popupButtonObject.localToGlobal(
-            popupButtonObject.size.bottomLeft(Offset(0, -10)),
+            popupButtonObject.size
+                .bottomLeft(Offset(0, widget.customDropDown)),
             ancestor: overlay),
         popupButtonObject.localToGlobal(
-            popupButtonObject.size.bottomRight(Offset(0, -10)),
+            popupButtonObject.size
+                .bottomRight(Offset(0, widget.customDropDown )),
             ancestor: overlay),
       ),
       Size(overlay.size.width, overlay.size.height),
