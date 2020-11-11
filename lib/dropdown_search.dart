@@ -114,7 +114,7 @@ class DropdownSearch<T> extends StatefulWidget {
   ///handle auto validation
   final bool autoValidate;
 
-  final BoxDecoration decoration;
+  final double elevation;
 
   /// An optional method to call with the final value when the form is saved via
   final FormFieldSetter<T> onSaved;
@@ -178,7 +178,7 @@ class DropdownSearch<T> extends StatefulWidget {
     this.dropdownBuilderSupportsNullItem = false,
     this.popupShape,
     this.popupItemDisabled,
-    this.popupBarrierColor, this.decoration,
+    this.popupBarrierColor, this.elevation = 0,
   })  : assert(autoValidate != null),
         assert(isFilteredOnline != null),
         assert(dropdownBuilderSupportsNullItem != null),
@@ -385,7 +385,7 @@ class _DropdownSearchState<T> extends State<DropdownSearch<T>> {
         color: widget.popupBackgroundColor,
         context: context,
         position: position,
-        elevation: 0,
+        elevation: widget.elevation,
         items: [
           CustomPopupMenuItem(
             enabled: false,
@@ -406,7 +406,6 @@ class _DropdownSearchState<T> extends State<DropdownSearch<T>> {
       filterFn: widget.filterFn,
       items: widget.items,
       onFind: widget.onFind,
-      decoration: widget.decoration,
       showSearchBox: widget.showSearchBox,
       itemBuilder: widget.popupItemBuilder,
       selectedValue: data,
