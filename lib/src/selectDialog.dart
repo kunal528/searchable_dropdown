@@ -9,6 +9,7 @@ class SelectDialog<T> extends StatefulWidget {
   final List<T> items;
   final bool showSearchBox;
   final bool isFilteredOnline;
+  final BoxDecoration decoration;
   final ValueChanged<T> onChanged;
   final DropdownSearchOnFind<T> onFind;
   final DropdownSearchPopupItemBuilder<T> itemBuilder;
@@ -57,7 +58,7 @@ class SelectDialog<T> extends StatefulWidget {
     this.errorBuilder,
     this.autoFocusSearchBox = false,
     this.dialogMaxWidth,
-    this.itemDisabled,
+    this.itemDisabled, this.decoration,
   }) : super(key: key);
 
   @override
@@ -104,6 +105,7 @@ class _SelectDialogState<T> extends State<SelectDialog<T>> {
     return Container(
       width: widget.dialogMaxWidth ?? maxWidth,
       constraints: BoxConstraints(maxHeight: widget.maxHeight ?? maxHeight),
+      decoration: widget.decoration,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
