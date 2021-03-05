@@ -152,7 +152,7 @@ class _SelectDialogState<T> extends State<SelectDialog<T>> {
     showDialog(
       context: context,
       barrierDismissible: false,
-      child: AlertDialog(
+      builder: (cnt) => AlertDialog(
         title: Text("Error while getting online items"),
         content: _errorWidget(error),
         actions: <Widget>[

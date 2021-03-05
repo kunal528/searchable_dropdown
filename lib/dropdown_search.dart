@@ -250,7 +250,6 @@ class _DropdownSearchState<T> extends State<DropdownSearch<T>> {
       enabled: widget.enabled,
       onSaved: widget.onSaved,
       validator: widget.validator,
-      autovalidate: widget.autoValidate,
       initialValue: widget.selectedItem,
       builder: (FormFieldState<T> state) {
         if (state.value != value) {
@@ -263,8 +262,7 @@ class _DropdownSearchState<T> extends State<DropdownSearch<T>> {
             builder: (context, bool isFocused, w) {
               return InputDecorator(
                 isEmpty: value == null &&
-                    (widget.dropdownBuilder == null ||
-                        widget.dropdownBuilderSupportsNullItem),
+                    (widget.dropdownBuilderSupportsNullItem),
                 isFocused: isFocused,
                 decoration: _manageDropdownDecoration(state),
                 child: _defaultSelectItemWidget(value),
